@@ -1,8 +1,14 @@
 package uk.co.devexe
 
-import org.junit.Assert.assertTrue
 import java.io.File
+
+import org.junit.Assert.assertTrue
 import org.junit.{After, Test}
+
+/** This test class is written as an integration test rather than
+  * a series of unit tests as the DirectoryMaker works mainly with
+  * the file system which would otherwise require extensive mocking.
+  */
 
 @Test
 class DirectoryMakerTest {
