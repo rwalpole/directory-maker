@@ -14,12 +14,12 @@ import org.junit.{After, Test}
 class DirectoryMakerTest {
 
     val testDir = "src/test/resources"
-    val regexp = "^[0-9]{4}"
-    val expectedDir1 = new File(testDir,"1988")
-    val expectedDir2 = new File(testDir,"1989")
-    val expectedFile1 = new File(expectedDir1,"1988_1.txt")
-    val expectedFile2 = new File(expectedDir1,"1988_2.txt")
-    val expectedFile3 = new File(expectedDir2,"1989_1.txt")
+    val regexp = "^[0-9]{4}_[0-9]{1,4}[s|a]"
+    val expectedDir1 = new File(testDir,"1998_53a")
+    val expectedDir2 = new File(testDir,"1991_859s")
+    val expectedFile1 = new File(expectedDir1, "1998_53a_89956_19910328.txt")
+    val expectedFile2 = new File(expectedDir2, "1991_859s_89958_19910328.txt")
+    val expectedFile3 = new File(expectedDir2, "1991_859s_89959_19910328.txt")
 
     @Test
     def testRun() {

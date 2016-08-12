@@ -87,3 +87,9 @@ class DirectoryMaker(baseDirName: String, pattern: String) {
         moveFiles(baseDir)
     }
 }
+
+object DirectoryMaker extends App {
+    val sourceDir = "C:\\Users\\walpolrx\\Downloads\\GBR-0T2J-27062016121158_0000_Data"
+    val directoryMaker = new DirectoryMaker(sourceDir,"^[0-9]{4}_[0-9]{1,4}a")
+    directoryMaker.run()
+}
