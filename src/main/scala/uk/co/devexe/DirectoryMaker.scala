@@ -88,8 +88,20 @@ class DirectoryMaker(baseDirName: String, pattern: String) {
     }
 }
 
-object DirectoryMaker extends App {
-    val sourceDir = "C:\\Users\\walpolrx\\Downloads\\GBR-0T2J-27062016121158_0000_Data"
-    val directoryMaker = new DirectoryMaker(sourceDir,"^[0-9]{4}_[0-9]{1,4}a")
-    directoryMaker.run()
+object DirectoryMaker {
+
+    def main(args: Array[String]):Unit = {
+        if(args.length != 2) {
+            return usage()
+        }
+        val baseDirName = args(0)
+        val pattern = args(1)
+        val maker = new DirectoryMaker(baseDirName,pattern)
+        maker.run()
+    }
+
+    def usage() {
+        println("Usage:")
+        println("\tjava -jar directory-maker-1.0-jar-with-dependencies.jar <base-directory-path> '<pattern>'")
+    }
 }
